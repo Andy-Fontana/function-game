@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/* CSS Document */
+*, body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto';
+}
+.house-base-floor {
+	margin:auto;
+}
+.house-base-floor, .house-column {
+	display: flex;
+}
+.house-column{
+	flex-direction: column;
+}
+.left-column div{
+	align-self: flex-end;
+}
+.right-column div{
+	align-self: flex-start;
+}
+.room {
+	cursor: url("sherlock-04.png"), auto;
+}
+.room img{
+	display: block;
+	mix-blend-mode: saturation;
+	opacity: 0.4;
+	transition: all 1s ease;
+}
+
+.room img:hover {
+	/*
+	animation-name: turnLights;
+	animation-duration: 0.4s;
+	animation-fill-mode:forwards;
+	animation-timing-function:ease-in-out;
+	*/
+	mix-blend-mode: normal;
+	opacity: 1;
+	transition:
+		
+		opacity  1s ease,
+		mix-blend-mode 1s 1s ease;
+}
+
+/*Animate Room Light*/
+
+@keyframes turnLights {
+	from {
+		mix-blend-mode: saturation;
+	}
+	to {
+		mix-blend-mode: normal;
+	} 
+}
+
+.r1 {
+	order: 3;
+}
+.r2 {
+	order: 2;
+}
+
+
+.main {
+	background:#0D0D10;
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+}
+
+/*ITEM MENU*/
+
+#items-menu{
+	background: #ffffff0a;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.list-of-items {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: space-between;
+}
+
+.material-icons {
+	cursor: pointer;
+	margin-bottom: 15px;
+	flex-grow: 1;
+}
+.material-icons:hover {
+	transform: scale(110%);
+}
+.material-icons.items-color { 
+	color:#32AAFF; 
+}
+
+/*DIALOGUES*/
+#display-dialogue-icon {
+	position: relative;
+}
+
+#dialogue-box{
+	background: #FFFFFF;
+	position: fixed;
+  	top: 50%;
+ 	 left: 50%;
+  	/* bring your own prefixes */
+  	transform: translate(-50%, -50%);
+	padding: 20px;
+	border-radius: 5px;
+	height:auto;
+}
+
+#notification-circle {
+	position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 10px;
+    height: 10px;
+    background: #ff5454;
+    border-radius: 10px;
+    border: 3px solid #161619;
+}
+
+#current-dialogue {
+	overflow: hidden;
+	border-right: .15em solid orange; /* The typwriter cursor */
+	white-space: nowrap;
+	letter-spacing: .15em; /* Adjust as needed */
+	animation: 
+	typing 5s steps(40, end),
+	blink-caret .75s step-end infinite;
+
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+/*PUZZLES*/
+
+.puzzle-box {
+	background: #ECECEC;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+	height: 300px;
+	margin: auto;
+}
+.puzzle-box *{
+	align-self: center;
+}
